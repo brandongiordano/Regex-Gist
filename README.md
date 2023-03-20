@@ -4,7 +4,7 @@ Regular Expressions, commonly referred to as RegEx, are sequences of characters 
 
 ## Summary
 
-Phone number verification can appear tricky, for a business owner the abilty to store client's contact information can be incredibly vital but when the clients themselves enter their information it can make your database susceptible to bad data. This problem can become more complex when we consider the variation between international phone numbers. Cell phone numbers in the U.S. are a standard 10 digits but can be as high as 13 in Austria, we need to be able to account for different lengths and prefixes for the data that's inserted into our database.
+Phone number validation can appear tricky, for a business owner the abilty to store client's contact information can be incredibly vital but when the clients themselves enter their information it can make your database susceptible to bad data. Cell phone numbers in the U.S. are standardized at 10 digits but can be written in many different ways, often including paranthesis around the area code or hyphens in between the numbers. We need to be able to account for different formats so that we can store all the data without issue.
 
 The Regular Expression below has the ability to do this for us and we'll be breaking down exactly how this works.
 Review the following snippit:
@@ -25,7 +25,11 @@ Review the following snippit:
 
 ## Regex Components
 
-Let's start with a quick breakdown of what each component means:
+Let's start with a quick breakdown of what each component of our snippet means:
+
+```
+/^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/
+```
 
 * /^\(? : The number may start with an open parenthesis.
 * (\d{3}) : Then three numeric digits must be entered for valid formats. If there is no parenthesis, the number must start with these digits.
@@ -37,8 +41,10 @@ Let's start with a quick breakdown of what each component means:
 
 
 ### Anchors
+Anchors are regex tokens that don't match any characters but that say or assert something about the string or the matching process. The opening section of our code snippet is a good example. ``` /^\(? ``` indicates that the number may start with an open paranthesis and ``` \)? ``` indicates that our opening 3 numbers may end in a closed parenthesis. We also include ``` [- ]? ``` twice to allow for the inclusion of hyphens between our digits. We also indicate that our phone number must end with 4 digits here ``` (\d{4})$/ ``` the $ indicates the end of the string.
 
 ### Quantifiers
+Quantifiers specify how many instances of a character, group, or character class must be present in the input for a match to be found. The two ``` (\d{3}) ``` sections indicate we want three digits where``` \d ``` lets us to know to look for digits and ``` {3} ``` indicates a quantity of three. This is repeated at the end but instead tells us to look for four ``` (\d{4}) ```.
 
 ### Grouping Constructs
 

@@ -19,8 +19,6 @@ Review the following snippit:
 - [Grouping Constructs](#grouping-constructs)
 - [Bracket Expressions](#bracket-expressions)
 - [Character Classes](#character-classes)
-- [The OR Operator](#the-or-operator)
-- [Flags](#flags)
 - [Character Escapes](#character-escapes)
 
 ## Regex Components
@@ -41,7 +39,7 @@ Let's start with a quick breakdown of what each component of our snippet means:
 
 
 ### Anchors
-Anchors are regex tokens that don't match any characters but that say or assert something about the string or the matching process. The opening section of our code snippet is a good example. ``` /^\(? ``` indicates that the number may start with an open paranthesis and ``` \)? ``` indicates that our opening 3 numbers may end in a closed parenthesis. We also include ``` [- ]? ``` twice to allow for the inclusion of hyphens between our digits. We also indicate that our phone number must end with 4 digits here ``` (\d{4})$/ ``` the $ indicates the end of the string.
+Anchors are regex tokens that don't match any characters but that say or assert something about the string or the matching process. The position anchors ``` ^ ``` and ``` $ ``` match the beginning and the ending of the input string, respectively.The opening section of our code snippet is a good example. ``` /^\(? ``` indicates that the number may start with an open paranthesis and ``` \)? ``` indicates that our opening 3 numbers may end in a closed parenthesis. We also include ``` [- ]? ``` twice to allow for the inclusion of hyphens between our digits. We also indicate that our phone number must end with 4 digits here ``` (\d{4})$/ ``` the $ indicates the end of the string.
 
 ### Quantifiers
 Quantifiers specify how many instances of a character, group, or character class must be present in the input for a match to be found. The two ``` (\d{3}) ``` sections indicate we want three digits where``` \d ``` lets us to know to look for digits and ``` {3} ``` indicates a quantity of three. This is repeated at the end but instead tells us to look for four ``` (\d{4}) ```.
@@ -55,12 +53,9 @@ A bracket expression is either a matching list expression or a non-matching list
 ### Character Classes
 A character class defines a set of characters, any one of which can occur in an input string for a match to succeed. ``` [- ]? ``` this snippet here uses square brackets to indicate that in between our subexpressions we have the option to include hyphens.
 
-### The OR Operator
-
-### Flags
-
 ### Character Escapes
+The ``` \ ``` is known as the escape code, which restore the original literal meaning of the following character. Similarly, ``` * ```, ``` + ```, ``` ? ``` (occurrence indicators), ``` ^ ```, ``` $ ``` (position anchors) have special meaning in regex. ``` /^\(? ``` here you can see that we use our escape indicator to escape from our opening position anchor.
 
 ## Author
 
-A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
+Written by Brandon Giordano. You can view more of my work at my [GitHub](https://github.com/brandongiordano)

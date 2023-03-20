@@ -1,6 +1,6 @@
 # Regex Gist
 
-Introductory paragraph (replace this with your text)
+Regular Expressions, commonly referred to as RegEx, are sequences of characters that form patterns which can be used to perform searches within text. These regular expressions can range in complexity, sometimes being just one character! Regardless of their length they will always maintain a similar purpose which is to search for a set of strings that matches a specific pattern. The following document will describe a particular RegEx, its use-case, and its functionality.
 
 ## Summary
 

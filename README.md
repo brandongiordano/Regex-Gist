@@ -47,10 +47,13 @@ Anchors are regex tokens that don't match any characters but that say or assert 
 Quantifiers specify how many instances of a character, group, or character class must be present in the input for a match to be found. The two ``` (\d{3}) ``` sections indicate we want three digits where``` \d ``` lets us to know to look for digits and ``` {3} ``` indicates a quantity of three. This is repeated at the end but instead tells us to look for four ``` (\d{4}) ```.
 
 ### Grouping Constructs
+Grouping constructs delineate the subexpressions of a regular expression and capture the substrings of an input string. Here we break up our phone number into 3 sets of digits and read them as two sets of three and one set of four using parenthesis. ``` (\d{3}) ``` the paranthesis around this subexpression indicates that is is grouped. Captures that use parentheses are numbered automatically from left to right based on the order of the opening parentheses in the regular expression, starting from one. The capture that is numbered zero is the text matched by the entire regular expression pattern.
 
 ### Bracket Expressions
+A bracket expression is either a matching list expression or a non-matching list expression. For example, we use curly brackets to match exactly n instances of the proceeding character or pattern. ``` (\d{3}) ``` in this case we're saying to search for three instances of a digit.
 
 ### Character Classes
+A character class defines a set of characters, any one of which can occur in an input string for a match to succeed. ``` [- ]? ``` this snippet here uses square brackets to indicate that in between our subexpressions we have the option to include hyphens.
 
 ### The OR Operator
 
